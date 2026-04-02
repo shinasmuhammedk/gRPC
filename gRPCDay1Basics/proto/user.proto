@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "grpcBasics/proto";
+
+message UserRequest {
+  string name = 1;
+}
+
+message UserResponse {
+  string message = 1;
+}
+
+service UserService {
+  rpc SayHello (UserRequest) returns (UserResponse);
+}
