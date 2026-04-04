@@ -21,6 +21,6 @@ message UserList{
 
 service UserService{
     rpc CreateUser (User) returns (User);
-    rpc GetUser (UserRequest) returns (User);
+    rpc GetUser (User) returns (User);
     rpc ListUser (Empty) returns (UserList);
 }

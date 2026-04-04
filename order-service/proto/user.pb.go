@@ -210,13 +210,14 @@ const file_proto_user_proto_rawDesc = "" +
 	"\x05Empty\",\n" +
 	"\bUserList\x12 \n" +
 	"\x05users\x18\x01 \x03(\v2\n" +
-	".user.UserR\x05users2\x86\x01\n" +
+	".user.UserR\x05users2\x7f\n" +
 	"\vUserService\x12$\n" +
 	"\n" +
 	"CreateUser\x12\n" +
 	".user.User\x1a\n" +
-	".user.User\x12(\n" +
-	"\aGetUser\x12\x11.user.UserRequest\x1a\n" +
+	".user.User\x12!\n" +
+	"\aGetUser\x12\n" +
+	".user.User\x1a\n" +
 	".user.User\x12'\n" +
 	"\bListUser\x12\v.user.Empty\x1a\x0e.user.UserListB\tZ\a./protob\x06proto3"
 
@@ -242,7 +243,7 @@ var file_proto_user_proto_goTypes = []any{
 var file_proto_user_proto_depIdxs = []int32{
 	0, // 0: user.UserList.users:type_name -> user.User
 	0, // 1: user.UserService.CreateUser:input_type -> user.User
-	1, // 2: user.UserService.GetUser:input_type -> user.UserRequest
+	0, // 2: user.UserService.GetUser:input_type -> user.User
 	2, // 3: user.UserService.ListUser:input_type -> user.Empty
 	0, // 4: user.UserService.CreateUser:output_type -> user.User
 	0, // 5: user.UserService.GetUser:output_type -> user.User

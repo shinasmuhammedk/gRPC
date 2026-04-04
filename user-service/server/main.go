@@ -34,6 +34,24 @@ func (s *server) CreateUser(ctx context.Context, req *pb.User) (*pb.User, error)
 	}, nil
 }
 
+func (s *server) GetUser(ctx context.Context, req *pb.UserRequest) (*pb.User, error) {
+
+	var user pb.User
+
+	err := s.dbConn.QueryRow(
+		"SELECT id, name FROM users WHERE id=$1",
+		req.Id,
+	).Scan(&user.Id, &user.Name)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &user, nil
+}
+
+
+
 func main() {
 	// Start listener
 	lis, err := net.Listen("tcp", ":50051")
