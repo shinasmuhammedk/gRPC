@@ -17,14 +17,14 @@ func main() {
 
 	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
 	if err != nil {
-		log.Fatalf("Failed to connect to UserSevice", err)
+		log.Fatal("Failed to connect to UserSevice", err)
 	}
 
 	userClient := userpb.NewUserServiceClient(conn)
 
 	lis, err := net.Listen("tcp", ":50052")
 	if err != nil {
-		log.Fatalf("Failed to listen:", err)
+		log.Fatal("Failed to listen:", err)
 	}
 
 	grpcServer := grpc.NewServer()
